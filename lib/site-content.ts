@@ -63,16 +63,18 @@ export type ProjectEntry = {
   description: string
   features: string[]
   techStack: string[]
-  demoUrl: string
   caseStudyUrl: string
+  projectLinkLabel: string
   /** Optional: path under /public or absolute URL (see next.config images). */
   imageSrc?: string
   imageAlt?: string
+  /** Defaults to "cover". Use "contain" to avoid cropping screenshots. */
+  imageFit?: "cover" | "contain"
 }
 
 export const projects: ProjectEntry[] = [
   {
-    title: "mypaymentslog",
+    title: "MyPaymentsLog",
     tagline: "Payment tracking web application",
     description:
       "A full-stack web app designed to help users track and manage personal financial transactions in one place.",
@@ -94,10 +96,11 @@ export const projects: ProjectEntry[] = [
       "Cursor",
       "v0.dev",
     ],
-    demoUrl: "#",
-    caseStudyUrl: "#",
-    // imageSrc: "/projects/mypaymentslog.png",
-    // imageAlt: "mypaymentslog dashboard screenshot",
+    caseStudyUrl: "https://mypaymentslog.com/",
+    projectLinkLabel: "Link",
+    imageSrc: "/projects/mypaymentslog.png",
+    imageAlt: "MyPaymentsLog landing page screenshot showing transaction history",
+    imageFit: "contain",
   },
   {
     title: "KeepMeClose",
@@ -118,10 +121,13 @@ export const projects: ProjectEntry[] = [
       "Cursor",
       "v0.dev",
     ],
-    demoUrl: "#",
-    caseStudyUrl: "#",
-    // imageSrc: "/projects/keepmeclose.png",
-    // imageAlt: "KeepMeClose app screenshot",
+    caseStudyUrl:
+      "https://apps.apple.com/us/app/keepmeclose-contact-reminder/id6760917712",
+    projectLinkLabel: "App Store",
+    imageSrc: "/projects/keepmeclose.png",
+    imageAlt:
+      "KeepMeClose app showing top streaks, upcoming reminders, and tab bar",
+    imageFit: "contain",
   },
 ]
 

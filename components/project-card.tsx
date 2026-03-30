@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ExternalLink, FileText } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
@@ -39,7 +39,7 @@ function ProjectMediaPlaceholder({
           {tagline}
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
-          Case study preview — swap in a product screenshot when you have one.
+          Preview — swap in a product screenshot when you have one.
         </p>
       </div>
     </div>
@@ -53,6 +53,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const hasImage = Boolean(project.imageSrc)
+  const fit = project.imageFit ?? "cover"
 
   return (
     <motion.article
@@ -78,7 +79,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 src={project.imageSrc}
                 alt={project.imageAlt ?? `${project.title} screenshot`}
                 fill
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                className={cn(
+                  "bg-muted/40 transition-transform duration-500 group-hover:scale-[1.01]",
+                  fit === "contain"
+                    ? "object-contain object-center p-4 sm:p-6"
+                    : "object-cover object-top",
+                )}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card/40 via-transparent to-transparent" />
@@ -144,25 +150,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <Button
               asChild
               size="sm"
-              className="rounded-lg bg-accent text-accent-foreground shadow-sm shadow-accent/20 hover:bg-accent/90"
+              className="rounded-lg border-0 bg-accent text-accent-foreground shadow-md shadow-accent/25 transition hover:bg-accent/90"
             >
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Live Demo
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="sm" className="rounded-lg">
               <a
                 href={project.caseStudyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
               >
-                <FileText className="h-4 w-4" />
-                Case Study
+                <ExternalLink className="h-4 w-4" aria-hidden />
+                {project.projectLinkLabel}
               </a>
             </Button>
           </div>
