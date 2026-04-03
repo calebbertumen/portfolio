@@ -24,7 +24,7 @@ export function TechStackSection() {
           />
         </motion.div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-5">
           {techStackContent.categories.map((category, categoryIndex) => (
             <motion.div
               key={category.category}

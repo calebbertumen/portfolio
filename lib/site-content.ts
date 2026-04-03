@@ -1,8 +1,7 @@
 import {
-  Bot,
+  Brain,
   Code2,
   Lightbulb,
-  Sparkles,
   Target,
   Zap,
   type LucideIcon,
@@ -29,15 +28,19 @@ export const navItems = [
 export const heroContent = {
   name: "Caleb Bertumen",
   initials: "CB",
-  subtitle:
-    "Product Engineer building and shipping full-stack applications with AI-assisted workflows.",
+  /** Subtle line directly under the name */
+  focusLine: "Focus: AI-powered product development",
+  subtitle: "Product Engineer building AI-powered, full-stack applications",
   description:
-    "I build user-focused products from idea to deployment, combining product thinking, full-stack development, and AI-assisted tools to move quickly and iterate effectively.",
+    "I build user-focused products from idea to deployment, combining product thinking, full-stack development, and AI-powered systems to build intelligent, user-focused applications.",
+  /** Strong systems-design line below the intro */
+  systemsHighlight:
+    "I design systems that leverage structured data and AI to generate personalized, context-aware user experiences.",
 } as const
 
 export const aboutContent = {
   intro:
-    "I'm an Informatics graduate with experience building software, automations, and user-centered products. My work focuses on turning ideas into usable applications through rapid prototyping, thoughtful product decisions, and scalable implementation.",
+    "I'm an Informatics graduate with experience building full-stack applications, AI-powered features, and user-centered products. I focus on turning ideas into scalable, real-world solutions through rapid prototyping, thoughtful product decisions, and intelligent system design.",
   highlights: [
     {
       Icon: Code2,
@@ -50,9 +53,10 @@ export const aboutContent = {
       description: "User-centered design approach",
     },
     {
-      Icon: Sparkles,
-      title: "AI-Assisted Workflow",
-      description: "Modern development tools",
+      Icon: Brain,
+      title: "AI System Design",
+      description:
+        "Designing and integrating AI-driven features using structured data and contextual inputs",
     },
   ] satisfies { Icon: LucideIcon; title: string; description: string }[],
 } as const
@@ -70,19 +74,74 @@ export type ProjectEntry = {
   imageAlt?: string
   /** Defaults to "cover". Use "contain" to avoid cropping screenshots. */
   imageFit?: "cover" | "contain"
+  /** Short label under the title (e.g. product positioning). */
+  titleBadge?: string
+  /** One sentence of technical depth for complex projects. */
+  technicalDepth?: string
+  /** Optional second bullet list (e.g. AI-specific capabilities). */
+  aiFeatures?: string[]
+  /** Numbered “how it works” steps. */
+  howItWorks?: string[]
 }
 
 export const projects: ProjectEntry[] = [
   {
+    title: "KeepMeClose",
+    titleBadge: "AI-Driven Personal Assistant",
+    tagline:
+      "AI-powered relationship management and engagement assistant",
+    description:
+      "An AI-powered application that helps users maintain personal relationships through intelligent reminders, interaction tracking, and personalized follow-up suggestions based on past behavior and context.",
+    technicalDepth:
+      "Built prompt pipelines that combine structured user data with contextual inputs to generate relevant, personalized AI suggestions.",
+    features: [
+      "Intelligent reminder scheduling with adaptive engagement tracking",
+      "AI-assisted contact insights and follow-up recommendations",
+      "Engagement analytics dashboard with behavioral patterns",
+      "Custom scoring system balancing daily, weekly, and monthly consistency",
+    ],
+    aiFeatures: [
+      "Personalized follow-up suggestions generated from interaction history and notes",
+      "Context-aware recommendations using structured user data (check-ins, outcomes, preferences)",
+      "Conversational AI assistant to guide user engagement decisions",
+      "Continuous learning from user feedback and interaction patterns",
+    ],
+    howItWorks: [
+      "User logs interactions and optional notes after each check-in",
+      "Structured data is stored and used as context for AI suggestions",
+      "AI generates personalized follow-up recommendations",
+      "Feedback loop refines future suggestions",
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "React Query",
+      "Supabase",
+      "OpenAI API",
+      "Cursor",
+      "v0.dev",
+    ],
+    caseStudyUrl:
+      "https://apps.apple.com/us/app/keepmeclose-contact-reminder/id6760917712",
+    projectLinkLabel: "App Store",
+    imageSrc: "/projects/keepmeclose.png",
+    imageAlt:
+      "KeepMeClose app showing top streaks, upcoming reminders, and tab bar",
+    imageFit: "contain",
+  },
+  {
     title: "MyPaymentsLog",
     tagline: "Payment tracking web application",
     description:
-      "A full-stack web app designed to help users track and manage personal financial transactions in one place.",
+      "A full-stack financial tracking application that aggregates and structures transaction data to provide users with a centralized view of spending behavior.",
+    technicalDepth:
+      "Engineered data flows to synchronize external financial APIs with internal transaction models for consistent and reliable tracking.",
     features: [
-      "Secure account linking and transaction retrieval",
-      "Digital and manual transaction tracking",
-      "QR-based logging workflow",
-      "Authentication and session management",
+      "Integrated Plaid API for secure financial data aggregation and normalization",
+      "Designed hybrid transaction pipeline (automatic + manual entry) for complete coverage",
+      "Implemented QR-based workflow for fast, real-world expense logging",
+      "Built secure authentication and session management using Auth.js",
     ],
     techStack: [
       "Next.js",
@@ -100,33 +159,6 @@ export const projects: ProjectEntry[] = [
     projectLinkLabel: "Link",
     imageSrc: "/projects/mypaymentslog.png",
     imageAlt: "MyPaymentsLog landing page screenshot showing transaction history",
-    imageFit: "contain",
-  },
-  {
-    title: "KeepMeClose",
-    tagline: "Relationship management and reminder application",
-    description:
-      "An application that helps users maintain personal relationships through reminders, interaction tracking, and consistency-focused engagement tools.",
-    features: [
-      "Reminder scheduling",
-      "Contact management",
-      "Engagement dashboard",
-      "Custom streak and ranking system",
-    ],
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "React Query",
-      "Cursor",
-      "v0.dev",
-    ],
-    caseStudyUrl:
-      "https://apps.apple.com/us/app/keepmeclose-contact-reminder/id6760917712",
-    projectLinkLabel: "App Store",
-    imageSrc: "/projects/keepmeclose.png",
-    imageAlt:
-      "KeepMeClose app showing top streaks, upcoming reminders, and tab bar",
     imageFit: "contain",
   },
 ]
@@ -147,10 +179,10 @@ export const howIBuildContent = {
         "I use modern tools to move from idea to MVP quickly, focusing on momentum and real user workflows.",
     },
     {
-      Icon: Bot,
-      title: "AI-Assisted Development",
+      Icon: Brain,
+      title: "AI-Integrated Systems",
       description:
-        "I incorporate tools like Cursor and v0.dev to accelerate UI creation, iteration, and debugging while staying hands-on with architecture and implementation.",
+        "I design and implement AI-powered features by combining structured user data with prompt pipelines to generate context-aware, personalized outputs.",
     },
     {
       Icon: Target,
@@ -178,12 +210,20 @@ export const techStackContent = {
       items: ["Git", "Vercel", "Figma", "Jira"],
     },
     {
+      category: "AI / Data",
+      items: [
+        "OpenAI API",
+        "Prompt Engineering",
+        "Contextual Data Pipelines",
+      ],
+    },
+    {
       category: "Other",
       items: [
         "API Integration",
         "Authentication",
         "Product Design",
-        "AI-Assisted Development",
+        "AI Feature Development",
       ],
     },
   ],

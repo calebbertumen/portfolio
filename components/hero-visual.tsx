@@ -39,33 +39,34 @@ export function HeroVisual({ className }: { className?: string }) {
                 Builder stack
               </p>
               <p className="text-xs text-muted-foreground">
-                From prototype to production deploy
+                From rapid prototyping to AI-powered production systems
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <ToolChip>Cursor</ToolChip>
                 <ToolChip>v0.dev</ToolChip>
                 <ToolChip>Next.js</ToolChip>
+                <ToolChip>OpenAI</ToolChip>
               </div>
             </div>
           </div>
           <div className="mt-4 grid grid-cols-3 gap-2 border-t border-border/60 pt-4">
-            <div className="rounded-lg bg-muted/60 px-2 py-2 text-center">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-                Iterations
+            <div className="rounded-lg bg-muted/60 px-1.5 py-2 text-center">
+              <p className="text-[9px] font-medium uppercase leading-tight tracking-wide text-muted-foreground">
+                Rapid iteration cycles
               </p>
               <p className="text-sm font-semibold tabular-nums text-foreground">
                 24
               </p>
             </div>
-            <div className="rounded-lg bg-muted/60 px-2 py-2 text-center">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-                Ship
+            <div className="rounded-lg bg-muted/60 px-1.5 py-2 text-center">
+              <p className="text-[9px] font-medium uppercase leading-tight tracking-wide text-muted-foreground">
+                Deployment frequency
               </p>
               <p className="text-sm font-semibold text-foreground">Weekly</p>
             </div>
-            <div className="rounded-lg bg-accent/10 px-2 py-2 text-center">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-accent">
-                Focus
+            <div className="rounded-lg bg-accent/10 px-1.5 py-2 text-center">
+              <p className="text-[9px] font-medium uppercase leading-tight tracking-wide text-accent">
+                User-centered design
               </p>
               <p className="text-sm font-semibold text-accent">Users</p>
             </div>

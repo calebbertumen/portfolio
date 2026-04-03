@@ -102,12 +102,28 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
               {project.title}
             </h3>
+            {project.titleBadge ? (
+              <p className="text-sm text-muted-foreground">
+                <span aria-hidden className="mr-1.5">
+                  ➡️
+                </span>
+                <span className="font-medium text-foreground/90">
+                  {project.titleBadge}
+                </span>
+              </p>
+            ) : null}
             <p className="text-sm font-medium text-accent">{project.tagline}</p>
           </header>
 
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
             {project.description}
           </p>
+
+          {project.technicalDepth ? (
+            <p className="mt-4 border-l-2 border-accent/40 pl-3 text-sm leading-relaxed text-foreground/85 italic">
+              {project.technicalDepth}
+            </p>
+          ) : null}
 
           <div className="mt-5">
             <p className="text-xs font-semibold uppercase tracking-wider text-foreground/80">
@@ -128,6 +144,43 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               ))}
             </ul>
           </div>
+
+          {project.aiFeatures && project.aiFeatures.length > 0 ? (
+            <div className="mt-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground/80">
+                AI features
+              </p>
+              <ul className="mt-2 space-y-2">
+                {project.aiFeatures.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-sm text-muted-foreground"
+                  >
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                      aria-hidden
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {project.howItWorks && project.howItWorks.length > 0 ? (
+            <div className="mt-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground/80">
+                How it works
+              </p>
+              <ol className="mt-2 list-decimal space-y-2 pl-5 text-sm text-muted-foreground marker:text-accent">
+                {project.howItWorks.map((step, i) => (
+                  <li key={i} className="pl-1">
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ) : null}
 
           <div className="mt-6">
             <p className="text-xs font-semibold uppercase tracking-wider text-foreground/80">

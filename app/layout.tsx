@@ -11,7 +11,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Caleb Bertumen | Product Engineer",
   description:
-    "Product Engineer building and shipping full-stack applications with AI-assisted workflows.",
+    "Product Engineer building AI-powered, full-stack applications and intelligent, user-focused products.",
   icons: {
     icon: [
       {

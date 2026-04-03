@@ -24,11 +24,17 @@ export function HeroSection() {
             <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08] xl:text-6xl">
               {heroContent.name}
             </h1>
+            <p className="mt-3 text-sm font-medium text-accent sm:text-[15px]">
+              {heroContent.focusLine}
+            </p>
             <p className="mt-5 max-w-xl text-lg font-medium leading-snug text-foreground sm:text-xl">
               {heroContent.subtitle}
             </p>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[17px]">
               {heroContent.description}
+            </p>
+            <p className="mt-4 max-w-xl border-l-2 border-accent/35 pl-4 text-sm leading-relaxed text-foreground/90 sm:text-[15px]">
+              {heroContent.systemsHighlight}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
