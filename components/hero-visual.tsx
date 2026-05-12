@@ -42,10 +42,11 @@ export function HeroVisual({ className }: { className?: string }) {
                 From rapid prototyping to AI-powered production systems
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
-                <ToolChip>Cursor</ToolChip>
-                <ToolChip>v0.dev</ToolChip>
+                <ToolChip>Claude Code</ToolChip>
+                <ToolChip>Claude AI</ToolChip>
                 <ToolChip>Next.js</ToolChip>
-                <ToolChip>OpenAI</ToolChip>
+                <ToolChip>TypeScript</ToolChip>
+                <ToolChip>Vercel</ToolChip>
               </div>
             </div>
           </div>
