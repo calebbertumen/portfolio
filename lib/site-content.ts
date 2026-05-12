@@ -119,6 +119,8 @@ export const projects: ProjectEntry[] = [
       "React Query",
       "Supabase",
       "OpenAI API",
+      "Claude AI",
+      "Claude Code",
       "Cursor",
       "v0.dev",
     ],
@@ -152,6 +154,7 @@ export const projects: ProjectEntry[] = [
       "Plaid",
       "Auth.js",
       "Vercel",
+      "Claude Code",
       "Cursor",
       "v0.dev",
     ],
@@ -176,13 +179,13 @@ export const howIBuildContent = {
       Icon: Zap,
       title: "Rapid Prototyping",
       description:
-        "I use modern tools to move from idea to MVP quickly, focusing on momentum and real user workflows.",
+        "I use tools like Claude Code and Cursor to move from idea to MVP quickly, focusing on momentum and real user workflows.",
     },
     {
       Icon: Brain,
       title: "AI-Integrated Systems",
       description:
-        "I design and implement AI-powered features by combining structured user data with prompt pipelines to generate context-aware, personalized outputs.",
+        "I design and implement AI-powered features using Claude AI, OpenAI, and custom prompt pipelines to generate context-aware, personalized outputs from structured user data.",
     },
     {
       Icon: Target,
@@ -207,11 +210,12 @@ export const techStackContent = {
     },
     {
       category: "Tools",
-      items: ["Git", "Vercel", "Figma", "Jira"],
+      items: ["Git", "Vercel", "Figma", "Jira", "Claude Code"],
     },
     {
       category: "AI / Data",
       items: [
+        "Claude AI (Anthropic)",
         "OpenAI API",
         "Prompt Engineering",
         "Contextual Data Pipelines",
