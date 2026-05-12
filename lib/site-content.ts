@@ -118,8 +118,11 @@ export const projects: ProjectEntry[] = [
       "Tailwind",
       "React Query",
       "Supabase",
+      "OpenAI API",
       "Claude AI",
       "Claude Code",
+      "Cursor",
+      "v0.dev",
     ],
     caseStudyUrl:
       "https://apps.apple.com/us/app/keepmeclose-contact-reminder/id6760917712",
@@ -160,6 +163,7 @@ export const projects: ProjectEntry[] = [
       "Vercel",
       "Resend",
       "Claude Code",
+      "Cursor",
     ],
     caseStudyUrl: "https://cardpeek.app",
     projectLinkLabel: "Link",
@@ -191,6 +195,8 @@ export const projects: ProjectEntry[] = [
       "Auth.js",
       "Vercel",
       "Claude Code",
+      "Cursor",
+      "v0.dev",
     ],
     caseStudyUrl: "https://mypaymentslog.com/",
     projectLinkLabel: "Link",
@@ -213,13 +219,13 @@ export const howIBuildContent = {
       Icon: Zap,
       title: "Rapid Prototyping",
       description:
-        "I use Claude Code to move from idea to MVP quickly, focusing on momentum and real user workflows.",
+        "I use tools like Claude Code and Cursor to move from idea to MVP quickly, focusing on momentum and real user workflows.",
     },
     {
       Icon: Brain,
       title: "AI-Integrated Systems",
       description:
-        "I design and implement AI-powered features using Claude AI and custom prompt pipelines to generate context-aware, personalized outputs from structured user data.",
+        "I design and implement AI-powered features using Claude AI, OpenAI, and custom prompt pipelines to generate context-aware, personalized outputs from structured user data.",
     },
     {
       Icon: Target,
@@ -240,7 +246,7 @@ export const techStackContent = {
     },
     {
       category: "Backend",
-      items: ["Node.js", "Prisma", "PostgreSQL", "Supabase"],
+      items: ["Node.js", "Prisma", "PostgreSQL"],
     },
     {
       category: "Tools",
@@ -250,9 +256,8 @@ export const techStackContent = {
       category: "AI / Data",
       items: [
         "Claude AI (Anthropic)",
+        "OpenAI API",
         "Prompt Engineering",
-        "Agentic AI Design",
-        "Structured AI Outputs",
         "Contextual Data Pipelines",
       ],
     },
