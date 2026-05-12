@@ -133,6 +133,46 @@ export const projects: ProjectEntry[] = [
     imageFit: "contain",
   },
   {
+    title: "CardPeek",
+    titleBadge: "Pokémon Card Price Tracker",
+    tagline: "Real eBay sold listing price intelligence for Pokémon cards",
+    description:
+      "A full-stack Pokémon card price tracking application that pulls real eBay sold listing data — not asking prices or marketplace estimates — and delivers accurate pricing snapshots with condition-specific filtering, price history charts, and portfolio tracking.",
+    technicalDepth:
+      "Engineered a scrape pipeline and comp-scoring algorithm that selects, weights, and prices cards from raw eBay sold listing data in real time.",
+    features: [
+      "Comp scoring algorithm with recency weighting, outlier detection, and bundle/lot filtering",
+      "Condition-aware scraping across Raw NM/LP/MP and PSA 8/9/10 buckets",
+      "Price history charts (30/60/90 day) with market signal indicators",
+      "Watchlist and collection tracker with price change alerts via email",
+    ],
+    howItWorks: [
+      "User searches a card by name, set, and condition",
+      "App checks cache or queues a live Apify scrape of eBay sold listings",
+      "Comp scoring selects the best matches and computes a median market value",
+      "Pricing snapshot is displayed with range, sample strength, and recent sales",
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Prisma",
+      "PostgreSQL",
+      "Stripe",
+      "Apify",
+      "Vercel",
+      "Resend",
+      "Claude Code",
+      "Cursor",
+    ],
+    caseStudyUrl: "https://cardpeek.app",
+    projectLinkLabel: "Link",
+    imageSrc: "/projects/cardpeek.png",
+    imageAlt:
+      "CardPeek app showing Umbreon ex pricing snapshot with market range and recent eBay sold listings",
+    imageFit: "contain",
+  },
+  {
     title: "MyPaymentsLog",
     tagline: "Payment tracking web application",
     description:
